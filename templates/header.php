@@ -26,16 +26,23 @@ use App\Tools\NavigationTools;
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a href="/" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'home') ?>">Accueil</a>
+                    <a href="index.php" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'home') ?>">Accueil</a>
                 </li>
+                <li class="nav-item">
+                    <a href="index.php?controller=page&action=about" class="nav-link px-2 <?= NavigationTools::addActiveClass('page', 'about') ?>">About</a>
+                </li>
+                <li class="nav-item">
+                <a href="index.php?controller=article&action=list" class="nav-link px-2 <?= NavigationTools::addActiveClass('article', 'list') ?>">Article</a>
+            </li>
+
             </ul>
 
             <div class="col-md-3 text-end">
                 <?php if (User::isLogged()) { ?>
-                    <a href="/index.php?controller=auth&action=logout" class="btn btn-primary">Déconnexion</a>
+                    <a href="index.php?controller=auth&action=logout" class="btn btn-primary">Déconnexion</a>
                 <?php } else { ?>
-                    <a href="/index.php?controller=auth&action=login" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('auth', 'login') ?>">Connexion</a>
-                    <a href="/index.php?controller=user&action=register" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('user', 'register') ?>">Inscription</a>
+                    <a href="index.php?controller=auth&action=login" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('auth', 'login') ?>">Connexion</a>
+                    <a href="index.php?controller=user&action=register" class="btn btn-outline-primary me-2 <?= NavigationTools::addActiveClass('user', 'register') ?>">Inscription</a>
                 <?php } ?>
             </div>
         </header>

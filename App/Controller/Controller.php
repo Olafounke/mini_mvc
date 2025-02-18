@@ -20,7 +20,18 @@ class Controller
                         $controller->route();
                         break;
                     case 'user':
+                        //charger controleur user
                         $controller = new UserController();
+                        $controller->route();
+                        break;
+                    case 'article':
+                        //charger controleur article
+                        $controller = new ArticleController();
+                        $controller->route();
+                        break;
+                    case 'comment':
+                        //charger controleur comment
+                        $controller = new CommentController();
                         $controller->route();
                         break;
                     default:
